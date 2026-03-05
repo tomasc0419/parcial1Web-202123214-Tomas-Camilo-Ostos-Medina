@@ -1,6 +1,6 @@
 {
-  "welcome": "Bienvenido",
-  "description": "Esta es una app con internacionalización.",
-  "home": "Inicio",
-  "profile": "Perfil"
+ "characters":"Personajes de Harry Potter",
+ "gender":"Género",
+ "house":"Casa",
+ "wand":"Varita"
 }

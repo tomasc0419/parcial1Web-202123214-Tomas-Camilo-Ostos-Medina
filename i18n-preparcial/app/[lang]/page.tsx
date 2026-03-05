@@ -1,28 +1,27 @@
-import { notFound } from 'next/navigation'
-import LanguageSwitcher from './components/LanguageSwitcher'
-import { getDictionary, hasLocale } from './dictionaries'
+import CharacterList from "./components/CharacterList"
+import {getDictionary} from "./dictionaries"
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ lang: string }>
-}) {
-  const { lang } = await params
-  if (!hasLocale(lang)) notFound()
+export default async function Home({
+params
+}:{params:Promise<{lang:string}>}){
 
-  const dict = await getDictionary(lang)
+const {lang} = await params
+const dict = await getDictionary(lang)
 
-  return (
-    <main style={{ padding: 24 }}>
-      <LanguageSwitcher currentLang={lang} />
+return(
 
-      <h1>{dict.welcome}</h1>
-      <p>{dict.description}</p>
+<section>
 
-      <ul>
-        <li>{dict.home}</li>
-        <li>{dict.profile}</li>
-      </ul>
-    </main>
-  )
+<h1 className="text-center text-2xl font-bold mb-6">
+
+{dict.characters}
+
+</h1>
+
+<CharacterList lang={lang}/>
+
+</section>
+
+)
+
 }

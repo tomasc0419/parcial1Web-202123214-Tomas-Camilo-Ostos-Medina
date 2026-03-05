@@ -1,6 +1,6 @@
 {
-  "welcome": "Welcome",
-  "description": "This is an app with internationalization.",
-  "home": "Home",
-  "profile": "Profile"
+ "characters":"Harry Potter Characters",
+ "gender":"Gender",
+ "house":"House",
+ "wand":"Wand"
 }
