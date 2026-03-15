@@ -1,19 +1,19 @@
-export async function fetchCharacters(){
+export async function fetchCharacters() {
+  const res = await fetch("https://hp-api.onrender.com/api/characters", {
+    cache: "no-store",
+  })
 
-const res = await fetch(
-"https://hp-api.onrender.com/api/characters",
-{cache:"no-store"}
-)
+  if (!res.ok) throw new Error("API error")
 
-if(!res.ok) throw new Error("API error")
-
-return res.json()
-
+  return res.json()
 }
-export async function getFirst12Characters(){
 
-const characters = await fetchCharacters()
+export async function getFirst12Characters() {
+  const characters = await fetchCharacters()
+  return characters.slice(0, 12)
+}
 
-return characters.slice(0,12)
-
+export async function getCharacterById(id: string) {
+  const characters = await fetchCharacters()
+  return characters.find((character: { id: string }) => character.id === id)
 }

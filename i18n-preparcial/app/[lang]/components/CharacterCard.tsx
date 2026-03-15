@@ -2,33 +2,49 @@ import Image from "next/image";
 import Link from "next/link";
 import {BgColorHouses} from "../constants/houses";
 
-export default function CharacterCard({character,lang}:string){
 
-const bg = BgColorHouses[character.house] || BgColorHouses.NoHouse
+type Character = {
+  id: string;
+  name: string;
+  image: string;
+  house: "Gryffindor" | "Slytherin" | "Ravenclaw" | "Hufflepuff" | "NoHouse";
+};
 
-return(
 
-<Link href={`/${lang}/characters/${character.id}`}>
+export default function CharacterCard({
+  character,
+  lang,
+}: {
+  character: Character;
+  lang: string;
+}) {
+  const bg = BgColorHouses[character.house] || BgColorHouses.NoHouse;
+console.log(character)
+console.log(character.image)
+ return (
+    <Link href={`/${lang}/characters/${character.id}`}>
 
-<div className={`${bg} p-4 rounded-lg text-white`}>
+      <div className="w-[320px] rounded-lg overflow-hidden shadow-md">
 
-<Image
-src={character.image}
-alt={character.name}
-width={10}
-height={50}
-/>
+        
+        <div className={`${bg} text-white text-center py-3 font-bold`}>
+          {character.name}
+        </div>
 
-<h2 className="text-center mt-2 font-bold">
+        
+        <div className="relative w-full h-[450px]">
 
-{character.name}
+          <Image
+            src={character.image}
+            alt={character.name}
+            fill
+            className="object-cover"
+          />
 
-</h2>
+        </div>
 
-</div>
+      </div>
 
-</Link>
-
-)
-
+    </Link>
+  );
 }

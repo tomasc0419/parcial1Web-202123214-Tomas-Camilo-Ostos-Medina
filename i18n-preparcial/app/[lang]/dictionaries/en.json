@@ -2,5 +2,14 @@
  "characters":"Harry Potter Characters",
  "gender":"Gender",
  "house":"House",
- "wand":"Wand"
+ "wand":"Wand",
+ "description": "Explore the magical universe of Harry Potter: a list of characters with their house, species and main information.",
+ "core":"Core",
+ "wood":"Wood", 
+ "length":"Length",
+ "noData":"No data",
+ "noHouse":"No house",
+  "characterNotFound": "character not found",
+  "detailTitle": "Character Detail",
+  "detailDescription": "Explore the magical universe of Harry Potter: a list of characters with their house, species and main information."
 }

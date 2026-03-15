@@ -4,24 +4,25 @@ import { hasLocale } from "./dictionaries";
 import { notFound } from "next/navigation";
 
 export default async function LangLayout({
- children,
- params,
+  children,
+  params,
 }: {
- children: React.ReactNode;
- params: Promise<{ lang: string }>;
+  children: React.ReactNode;
+  params: Promise<{ lang: string }>;
 }) {
+  const { lang } = await params;
 
- const { lang } = await params;
+  if (!hasLocale(lang)) notFound();
 
- if (!hasLocale(lang)) notFound();
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header lang={lang} />
 
- return (
-   <>
-     <Header lang={lang}/>
-     <main className="bg-[#e0e0e0] min-h-screen p-6">
-       {children}
-     </main>
-     <Footer/>
-   </>
- );
+      <main className="flex-1 px-4 py-8 bg-[#e0e0e0]">
+        {children}
+      </main>
+
+      <Footer />
+    </div>
+  );
 }

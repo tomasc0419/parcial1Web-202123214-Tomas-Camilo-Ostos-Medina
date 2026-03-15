@@ -2,5 +2,14 @@
  "characters":"Personajes de Harry Potter",
  "gender":"Género",
  "house":"Casa",
- "wand":"Varita"
+ "wand":"Varita", 
+ "description":"Explora el universo magíco de Harry Potter: un listado de personajes con su casa, especie y datos principales.",
+"core":"Nucleo",
+ "wood":"Madera", 
+ "length":"Longitud",
+ "noData":"Sin dato",
+"noHouse":"Sin casa",
+  "characterNotFound": "Personaje no encontrado",
+    "detailTitle": "Detalle del Personaje",
+    "detailDescription": "Explora el universo magíco de Harry Potter: un listado de personajes con su casa, especie y datos principales."
 }
